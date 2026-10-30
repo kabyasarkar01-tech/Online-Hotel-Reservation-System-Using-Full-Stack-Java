@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+	
+    <display-name>KS Group</display-name>
+
+    
+    <!-- Welcome Page -->
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+
+    <!-- Session Timeout -->
+    
+    <session-config>
+    
+        <!-- Time in Minutes -->
+        
+        <session-timeout>10</session-timeout>
+        
+    </session-config>
+    <context-param>
+    <param-name>file-upload</param-name>
+    <param-value>...</param-value>
+</context-param>
+</web-app>

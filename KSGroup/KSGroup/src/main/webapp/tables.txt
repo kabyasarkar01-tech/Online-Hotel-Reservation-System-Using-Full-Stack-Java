@@ -1,0 +1,91 @@
+HOTELS	TABLE  |
+------------------
+Column			Data Type		Length		Precision		Scale	Primary Key	Nullable
+HOTEL_ID		Varchar2			10			-					-			1						-			
+HOTEL_NAME	Varchar2			30			-					-			-						nullable
+CITY					Varchar2			20			-					-			-						nullable
+PHOTO			Varchar2			255			-					-			-						nullable
+-------------------------------------------------------------------------------------------------------------------------
+ROOMS TABLE  |
+-----------------
+Column		Data Type			Length		Precision		Scale	Primary Key	Nullable		FOREIGN Key
+HOTEL_ID	Varchar2				10			-					-			1						-					HOTELS(HOTEL_ID)
+ROOM_ID	Varchar2				10			-					-			2						-			
+CATEGORY	Varchar2				15			-					-			-						nullable
+PRICE			Number				-				7					2			-						nullable
+PHOTO		Varchar2				255			-					-			-						nullable
+CAPACITY	Number				-				1					0			-						nullable
+STATUS		Varchar2				10			-					-			-						-
+-------------------------------------------------------------------------------------------------------------------------
+CUSTOMERS TABLE |
+---------------------
+Column				Data Type		Length		Precision		Scale	Primary Key		Nullable
+CUSTOMER_ID	Varchar2			10			-					-			1							-			
+FIRST_NAME		Varchar2			30			-					-			-							-
+MIDDLE_NAME	Varchar2			30			-					-			-							nullable
+LAST_NAME		Varchar2			30			-					-			-							-
+GENDER				Varchar2			30			-					-			-							-
+EMAIL					Varchar2			30			-					-			-							-
+PASSWORD			Varchar2			100			-					-			-							-
+DOB						Date					7				-					-			-							-
+PHONE				Varchar2			15			-					-			-							-
+PHOTO				Varchar2			100			-					-			-							nullable
+-------------------------------------------------------------------------------------------------------------------------
+KSGROUP_ADMIN TABLE |
+---------------------------
+Column			Data Type	Length		Precision		Scale	Primary Key	Nullable
+USERNAME		Varchar2		20			-					-			-						nullable
+PASSWORD		Varchar2		20			-					-			-						nullable
+-------------------------------------------------------------------------------------------------------------------------
+BOOKINGS TABLE |
+--------------------
+Column					Data Type	Length		Precision		Scale	Primary Key	Nullable		Default		FOREIGN Key
+BOOKING_ID			Varchar2		10			-					-			1						-					-			
+CUSTOMER_ID		Varchar2		10			-					-			-						-					-					CUSTOMERS(CUSTOMER_ID)
+HOTEL_ID				Varchar2		10			-					-			-						-					-					HOTELS(HOTEL_ID)
+ROOM_ID				Varchar2		10			-					-			-						-					-					ROOMS(ROOM_ID)
+FROM_DATE			Date				7				-					-			-						-					-
+TO_DATE					Date				7				-					-			-						-					-
+NO_OF_PEOPLE		Number		-				1					0			-						-					-
+TOTAL_AMOUNT	Number		-				10				2			-						-					-
+BOOKING_DATE		Date				7				-					-			-						nullable		SYSDATE
+STATUS					Varchar2		15			-					-			-						nullable		'BOOKED'
+-------------------------------------------------------------------------------------------------------------------------
+PAYMENTS TABLE |
+--------------------
+Column				Data Type	Length		Precision		Scale	Primary Key	Nullable		Default		FOREIGN Key
+BOOKING_ID		Varchar2		10			-					-			1						-					-
+CUSTOMER_ID	Varchar2		10			-					-			-						-					-					CUSTOMERS(CUSTOMER_ID)
+FIRST_NAME		Varchar2		30			-					-			-						-					-
+MIDDLE_NAME	Varchar2		30			-					-			-						nullable		-
+LAST_NAME		Varchar2		30			-					-			-						-					-
+PAID_ON				Date				7				-					-			-						-					-
+HOTEL_NAME		Varchar2		30			-					-			-						-					-
+PAID_AMOUNT	Number		-				10				2			-						-					-
+ROOM_TYPE		Varchar2		15			-					-			-						-					-
+NO_OF_PEOPLE	Number		-				1					0			-						-					-
+STATUS				Varchar2		15			-					-			-						nullable	'PAID'
+-------------------------------------------------------------------------------------------------------------------------
+USER_DELETED_BOOKINGS TABLE |
+-------------------------------------
+Column				Data Type	Length		Precision		Scale	Primary Key	Nullable
+CUSTOMER_ID	Varchar2		10			-					-			1						-
+BOOKING_ID 		Varchar2 	10 			- 					- 			2 						-
+-------------------------------------------------------------------------------------------------------------------------
+CONTACT_MESSAGES TABLE |
+-------------------------------
+Column					Data Type	Length		Precision		Scale	Primary Key	Nullable		Default		FOREIGN Key
+MESSAGE_ID			Varchar2		10			-					-			1						-					-
+CUSTOMER_ID		Varchar2		10			-					-			-						nullable		-					CUSTOMERS(CUSTOMER_ID)
+FIRST_NAME			Varchar2		30			-					-			-						-					-
+MIDDLE_NAME		Varchar2		30			-					-			-						nullable		-
+LAST_NAME			Varchar2		30			-					-			-						-					-
+MESSAGE_TEXT		Varchar2		1000		-					-			-						-					-
+PARENT_ID				Varchar2		10			-					-			-						nullable		-
+IS_ADMIN				Varchar2		1				-					-			-						-					'N'
+CREATED_AT			Date				7				-					-			-						-					SYSDATE
+UPDATED_AT			Date				7				-					-			-						nullable		-
+PHONE					Varchar2		20			-					-			-						nullable		-
+EMAIL						Varchar2		100			-					-			-						nullable		-
+FULL_NAME			Varchar2		30			-					-			-						nullable		-
+------------------------------------------------------------------------------------------------------------------------
