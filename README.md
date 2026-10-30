@@ -16,8 +16,6 @@ The main objective of this project is to provide a convenient and user-friendly 
 - Database Connectivity
 - User-Friendly Interface
 
-*Edit this list to match the features actually implemented in your project.*
-
 ## 🛠️ Technologies Used
 
 **Frontend:**
@@ -37,9 +35,7 @@ The main objective of this project is to provide a convenient and user-friendly 
 **Development Tools:**
 - Eclipse IDE
 - Apache Tomcat Server
-- MySQL Workbench
-
-*Keep only the technologies that your project actually uses.*
+- Oracle Driver
 
 ## 📂 Project Structure
 
@@ -64,8 +60,6 @@ Online-Hotel-Reservation-System/
 ├── README.md
 └── .gitignore
 ```
-
-*The structure above is illustrative. Adjust it to match your actual Eclipse project.*
 
 ## ⚙️ Installation and Setup
 
@@ -92,7 +86,7 @@ Online-Hotel-Reservation-System/
    - Browse to the cloned project folder.
    - Click Finish.
 
-4. Configure the MySQL database.
+4. Configure the Oracle database.
 
 5. Update the database connection details in the project configuration.
 
@@ -104,7 +98,7 @@ Online-Hotel-Reservation-System/
 
 ## 🗄️ Database Configuration
 
-Make sure MySQL is running before starting the application.
+Make sure Oracle is running before starting the application.
 
 Configure the following database connection details according to your environment:
 
