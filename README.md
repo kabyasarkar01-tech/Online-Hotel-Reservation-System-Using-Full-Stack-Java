@@ -122,7 +122,7 @@ This project demonstrates the practical implementation of Full Stack Java develo
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Kabya Sarkar**
 
 GitHub: https://github.com/kabyasarkar01-tech
 
